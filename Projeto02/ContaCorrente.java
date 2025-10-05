@@ -8,6 +8,7 @@ public class ContaCorrente  extends Conta{
         super(titular, numero, saldo);
         this.limiteEspecial = limiteEspecial;
     }
+
     // getters
     public double getLimiteEspecial() {return limiteEspecial;}
     // setters
@@ -18,8 +19,18 @@ public class ContaCorrente  extends Conta{
 
     public void mostrarDados() {
         super.mostrarDados();
-        System.out.println("Limite Especial: " + limiteEspecial);
+        System.out.println("Limite Especial: " + String.format( "%.2f", limiteEspecial));
     }
+
+    public void mostrarDados(boolean detalharLimite) {
+        if (detalharLimite) {
+            mostrarDados(); 
+            double saldoDis= getSaldo() + getLimiteEspecial();
+            System.out.println("Seu saldo disponível é: " + String.format( "%.2f", saldoDis));
+        } else {
+            super.mostrarDados();
+        }
     
 
+    }
 }

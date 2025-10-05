@@ -14,7 +14,7 @@ public class Conta {
     // getters
     public String getTitular() {return titular;}
     public String getNumero() {return numero;}
-    public double getSaldo() {return saldo;}\
+    public double getSaldo() {return saldo;}
 
     // setters
     public void setTitular(String titular) {this.titular = titular;}
@@ -26,5 +26,13 @@ public class Conta {
         System.out.println("Número da conta: " + numero);
         System.out.println("Saldo: " + saldo);
     }
+
+    public void mostrarDados( double projecaoMensal) {
+        mostrarDados();
+        double projecao = saldo * (1 + projecaoMensal / 100.0);
+        System.out.println( " Projeção de " + projecaoMensal + "% ao mês: " + String.format( "%.2f", projecao) );
+
+    }
+
 
 }
